@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.9)
+set(CMAKE_CXX_STANDARD 17)
+project( hand_detection )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+include_directories(include)
+add_executable( hand_detection src/main.cpp src/Utils.cpp include/Utils.hpp src/Preprocessing.cpp include/Preprocessing.hpp src/Detector.cpp include/Detector.hpp src/Postprocessing.cpp include/Postprocessing.hpp)
+target_link_libraries( hand_detection ${OpenCV_LIBS} )  
